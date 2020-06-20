@@ -1,0 +1,18 @@
+let a = 3, b = 7;
+const MAX = a / b;
+const fractions = [{d: a / b, a, b}];
+
+do {
+    let d = a / b;
+
+    if (d < MAX) {
+        fractions.push({d, a, b});
+        a++;
+    } else {
+        b++;
+    }
+} while (b < 1000000);
+
+fractions.sort((a, b) => b.d - a.d);
+
+console.log(fractions.slice(0, 5));
